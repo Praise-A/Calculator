@@ -1,6 +1,8 @@
 let firstNum = "";
 let secondNum = "";
+let presentOperator = "";
 
+let displayTop = document.querySelector("#displayTop");
 let displayMain = document.querySelector("#displayMain");
 
 let clearBtn = document.getElementById("clear");
@@ -31,16 +33,50 @@ operatorsArr.forEach((operator) => {
 });
 
 let displayOperator = (operator) => {
-  displayMain.textContent += operator;
+  if (presentOperator !== "") {
+    calculate();
+  }
+  firstNum = displayMain.textContent;
+  presentOperator = operator;
+  displayTop.textContent = `${firstNum} ${presentOperator}`;
+  resetScreen();
+};
+
+//Reset Function
+let resetScreen = () => {
+  displayMain.textContent = "";
 };
 
 //Clear Button
-clearBtn.addEventListener("click", clearDisplay);
+clearBtn.addEventListener("click", () => clearDisplay());
 
-function clearDisplay() {
+let clearDisplay = () => {
+  displayTop.textContent = "";
   displayMain.textContent = "0";
-  console.log("Cleared!");
-}
+  presentOperator = "";
+};
+
+//Equals to Function
+equalsBtn.addEventListener("click", () => calculate());
+
+let calculate = () => {
+  secondNum = displayMain.textContent;
+  displayTop.textContent += ` ${secondNum} = `;
+
+  displayMain.textContent = operate(presentOperator, firstNum, secondNum);
+
+  presentOperator = "";
+
+  /*
+  numbersArr.forEach((num) => {
+    num.addEventListener("click", () => {
+      if (displayMain.textContent == "0" || displayMain.textContent !== "") {
+        displayMain.textContent = "";
+      }
+      displayMain.textContent += num.textContent;
+    });
+  });*/
+};
 
 let add = (a, b) => {
   return a + b;
@@ -58,23 +94,18 @@ let divide = (a, b) => {
   return a / b;
 };
 
-//Equals to Function
-equalsBtn.addEventListener("click", () => operate());
-
-let operate = (operator, firstNum, secondNum) => {
+let operate = (operator, a, b) => {
+  a = Number(a);
+  b = Number(b);
   if (operator == "+") {
-    add(firstNum, secondNum);
+    return add(a, b);
   } else if (operator == "-") {
-    subtract(firstNum, secondNum);
+    return subtract(a, b);
   } else if (operator == "*") {
-    multiply(firstNum, secondNum);
+    return multiply(a, b);
   } else if (operator == "/") {
-    divide(firstNum, secondNum);
+    return divide(a, b);
   } else {
-    return null;
+    return Error("Error");
   }
 };
-
-// let display = () => {
-//   displayValue = operate();
-// };
