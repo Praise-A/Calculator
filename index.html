@@ -10,38 +10,49 @@
   <body>
     <main>
       <div class="main-wrapper">
-        <div class="clear-button"><button id="clear">Clear</button></div>
+        <div class="clear-button">
+          <button id="clear">Clear</button>
+        </div>
         <div class="calculator-wrapper">
           <div class="calculator-inner">
             <div class="display">
-              <div class=""><p></p></div>
-              <div class=""><h1></h1></div>
+              <div class="display-top-wrapper">1223</div>
+              <div class="display-main-wrapper">
+                <h1 id="displayMain">0</h1>
+              </div>
             </div>
             <div class="calculator-controls">
-              <div class=""><h2>Clear</h2></div>
-              <div class=""><h1>+/-</h1></div>
-              <div class=""><h1>%</h1></div>
-              <div class=""><h1>/</h1></div>
+              <div class="">
+                <button id="clear" class="calc-function">Clear</button>
+              </div>
+              <div class="">
+                <button id="delete" class="calc-function">Del</button>
+              </div>
 
-              <div class=""><h1>7</h1></div>
-              <div class=""><h1>8</h1></div>
-              <div class=""><h1>9</h1></div>
-              <div class=""><h1>*</h1></div>
+              <div class=""><button class="calc-function">%</button></div>
+              <div class=""><button class="calc-operator">/</button></div>
 
-              <div class=""><h1>4</h1></div>
-              <div class=""><h1>5</h1></div>
-              <div class=""><h1>6</h1></div>
-              <div class=""><h1>-</h1></div>
+              <div class="calc-number"><button>7</button></div>
+              <div class="calc-number"><button>8</button></div>
+              <div class="calc-number"><button>9</button></div>
+              <div class=""><button class="calc-operator">*</button></div>
 
-              <div class=""><h1>1</h1></div>
-              <div class=""><h1>2</h1></div>
-              <div class=""><h1>3</h1></div>
-              <div class=""><h1>+</h1></div>
+              <div class="calc-number"><button>4</button></div>
+              <div class="calc-number"><button>5</button></div>
+              <div class="calc-number"><button>6</button></div>
+              <div class=""><button class="calc-operator">-</button></div>
 
-              <div class=""><h1>0</h1></div>
-              <div class=""><h1>.</h1></div>
+              <div class="calc-number"><button>1</button></div>
+              <div class="calc-number"><button>2</button></div>
+              <div class="calc-number"><button>3</button></div>
+              <div class=""><button class="calc-operator">+</button></div>
 
-              <div id="equals-sign"><h1>=</h1></div>
+              <div class="calc-number"><button>0</button></div>
+              <div class=""><button>.</button></div>
+
+              <div id="equal-sign-wrapper">
+                <button id="equalsSign">=</button>
+              </div>
             </div>
           </div>
         </div>
