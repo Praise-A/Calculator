@@ -5,13 +5,15 @@ let presentOperator = "";
 let displayTop = document.querySelector("#displayTop");
 let displayMain = document.querySelector("#displayMain");
 
-let clearBtn = document.getElementById("clear");
+let clearBtn = document.querySelector("#clear");
 let deleteBtn = document.querySelector("#delete");
+let signChange = document.querySelector("#signChange");
 
 let equalsBtn = document.querySelector("#equalsSign");
 
 let numbersArr = document.querySelectorAll(".calc-number");
 let operatorsArr = document.querySelectorAll(".calc-operator");
+let decimalPoint = document.querySelector("#point");
 
 //Display Numbers
 numbersArr.forEach((num) => {
@@ -23,6 +25,12 @@ let displayNum = (param) => {
     displayMain.textContent = "";
   }
   displayMain.textContent += param;
+};
+
+decimalPoint.addEventListener("click", () => addDecimalPoint());
+
+let addDecimalPoint = () => {
+  displayMain.textContent += ".";
 };
 
 //Display Operators
@@ -54,6 +62,21 @@ let clearDisplay = () => {
   displayTop.textContent = "";
   displayMain.textContent = "0";
   presentOperator = "";
+};
+
+//Delete Button
+deleteBtn.addEventListener("click", () => deleteLastNum());
+
+let deleteLastNum = () => {
+  displayMain.textContent = displayMain.textContent.slice(0, -1);
+};
+
+//+/-
+signChange.addEventListener("click", () => changeSign());
+
+let changeSign = () => {
+  let num = displayMain.textContent;
+  displayMain.textContent = num * -1;
 };
 
 //Equals to Function
