@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background: rgb(240, 240, 240);
+}
+
 button {
   border: 0;
   background-color: inherit;
@@ -13,6 +17,11 @@ button {
   border-radius: 50%;
   height: 100%;
   width: 100%;
+}
+
+main {
+  display: flex;
+  justify-content: center;
 }
 
 .main-wrapper {
@@ -25,14 +34,24 @@ button {
 }
 
 .calculator-wrapper {
-  display: flex;
-  justify-content: center;
+  max-width: 400px;
+}
+
+.calculator-inner {
+  background-color: rgb(150, 150, 150);
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 20px;
+  word-wrap: break-word;
 }
 
 .display {
   display: block;
+  background: rgb(240, 240, 240);
+  border: 1px solid black;
   padding: 1rem 0.5rem;
-  border: 2px solid beige;
+  margin-bottom: 20px;
+  border-radius: 10px;
 }
 
 .display-top-wrapper {
@@ -43,11 +62,12 @@ button {
 
 .display-main-wrapper {
   min-height: 2.5rem;
+  max-width: 100%;
   text-align: end;
 }
 
 .calculator-controls {
-  background-color: beige;
+  background-color: rgb(240, 240, 240);
   display: grid;
   height: 28rem;
   width: 22rem;
@@ -57,6 +77,8 @@ button {
   padding: 1rem;
   justify-content: center;
   line-height: inherit;
+  border-radius: 10px;
+  border: 1px solid black;
 }
 
 .calculator-controls > div {
@@ -75,10 +97,20 @@ button {
 
 .calc-function {
   background-color: silver;
+  font-size: 1.1rem;
 }
 
-.calc-operator {
-  background-color: green;
+.calc-operator,
+#equalsSign {
+  background-color: orange;
+  font-size: 1.5rem;
+}
+
+.calc-number,
+#point {
+  background-color: rgb(100, 100, 100);
+  color: white;
+  font-size: 1.5rem;
 }
 
 /* button:hover{background-color: ;} */

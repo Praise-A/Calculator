@@ -86,7 +86,9 @@ let calculate = () => {
   secondNum = displayMain.textContent;
   displayTop.textContent += ` ${secondNum} = `;
 
-  displayMain.textContent = operate(presentOperator, firstNum, secondNum);
+  displayMain.textContent = roundAnswer(
+    operate(presentOperator, firstNum, secondNum)
+  );
 
   presentOperator = "";
 
@@ -99,6 +101,10 @@ let calculate = () => {
       displayMain.textContent += num.textContent;
     });
   });*/
+};
+
+let roundAnswer = (ans) => {
+  return Math.round(ans * 100000000) / 100000000;
 };
 
 let add = (a, b) => {
@@ -124,11 +130,11 @@ let operate = (operator, a, b) => {
     return add(a, b);
   } else if (operator == "-") {
     return subtract(a, b);
-  } else if (operator == "*") {
+  } else if (operator == "×") {
     return multiply(a, b);
-  } else if (operator == "/") {
+  } else if (operator == "÷") {
     return divide(a, b);
   } else {
-    return Error("Error");
+    return Error;
   }
 };
