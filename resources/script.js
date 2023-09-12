@@ -30,13 +30,14 @@ let displayNum = (param) => {
 decimalPoint.addEventListener("click", () => addDecimalPoint());
 
 let addDecimalPoint = () => {
+  if (displayMain.textContent.includes(".")) return;
   displayMain.textContent += ".";
 };
 
 //Display Operators
 operatorsArr.forEach((operator) => {
   operator.addEventListener("click", () =>
-    displayOperator(operator.textContent)
+    displayOperator(operator.dataset.sign)
   );
 });
 
@@ -83,6 +84,7 @@ let changeSign = () => {
 equalsBtn.addEventListener("click", () => calculate());
 
 let calculate = () => {
+  if (presentOperator == "") return;
   secondNum = displayMain.textContent;
   displayTop.textContent += ` ${secondNum} = `;
 

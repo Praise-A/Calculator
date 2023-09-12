@@ -113,4 +113,17 @@ main {
   font-size: 1.5rem;
 }
 
+#signChange::before {
+  content: "±";
+  font-size: 1.5rem;
+}
+
+#divSign::before {
+  content: "÷";
+}
+
+#mulSign::before {
+  content: "×";
+}
+
 /* button:hover{background-color: ;} */
