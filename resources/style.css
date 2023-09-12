@@ -98,12 +98,14 @@ main {
 .calc-function {
   background-color: silver;
   font-size: 1.1rem;
+  color: #000;
 }
 
 .calc-operator,
 #equalsSign {
   background-color: orange;
   font-size: 1.5rem;
+  color: #000;
 }
 
 .calc-number,
